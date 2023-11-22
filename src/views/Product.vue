@@ -4,11 +4,7 @@
       <p>Loading product information...</p>
     </div>
     <div v-else>
-      <h2 class="category">/{{ product.category }}</h2>
       <article class="product">
-        <div class="product-visual">
-          <img class="product-img" :src="product?.image" alt="`image-${id}`" />
-        </div>
         <div class="product-description">
           <h3>{{ product?.title }}</h3>
           <div class="product-ditails">
@@ -22,6 +18,9 @@
           <p>
             <span class="bold">Description:</span>{{ product?.description }}
           </p>
+        </div>
+        <div class="product-visual">
+          <img class="product-img" :src="product?.image" alt="`image-${id}`" />
         </div>
       </article>
     </div>
@@ -66,10 +65,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.category {
-  font-size: 20px;
-  color: #2c73956b;
-}
 .product {
   display: flex;
   justify-content: center;
@@ -90,7 +85,6 @@ export default defineComponent({
   align-items: center;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 1px 2px 10px #c8c8c87d;
 }
 .product-img {
   display: block;
@@ -104,13 +98,13 @@ export default defineComponent({
 .product-description {
   display: flex;
   flex-direction: column;
+  align-self: center;
   padding: 0 0 40px;
   gap: 40px;
 }
 
 .product-description h3 {
   font-size: 36px;
-  text-align: center;
 }
 
 .product-ditails {

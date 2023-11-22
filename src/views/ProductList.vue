@@ -14,9 +14,11 @@
                 :src="product?.image"
                 alt="`image-${product.id}`" />
             </div>
-            <router-link :to="`/products/${product.id}`">
-              {{ product.title }}
-            </router-link>
+            <div class="link-container">
+              <router-link :to="`/products/${product.id}`">
+                {{ product.title }}
+              </router-link>
+            </div>
           </li>
         </template>
       </ul>
@@ -61,15 +63,15 @@ export default defineComponent({
 .product-list li {
   display: flex;
   width: calc(100% / 3 - 14px);
-  min-height: 400px;
+  min-height: 365px;
   min-width: 300px;
   flex-direction: column;
   font-size: 16px;
   text-align: center;
   background-color: #fff;
-  box-shadow: 1px 2px 10px #7b7b7b7d;
+  box-shadow: 1px 4px 12px #4a4d5a42;
   border-radius: 8px;
-  padding: 20px 15px;
+  padding: 20px 40px;
   gap: 30px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
@@ -89,5 +91,12 @@ export default defineComponent({
 .product-img-sm {
   height: 100%;
   object-fit: contain;
+}
+
+.link-container {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>
